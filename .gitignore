@@ -1,0 +1,84 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# local test files
+backend/test.py
+
+frontend/app/# dependencies
+frontend/app//node_modules
+frontend/app//.pnp
+frontend/app/.pnp.js
+frontend/app/
+frontend/app/# testing
+frontend/app//coverage
+frontend/app/
+frontend/app/# next.js
+frontend/app//.next/
+frontend/app//out/
+frontend/app/
+frontend/app/# production
+frontend/app//build
+frontend/app/
+frontend/app/# misc
+frontend/app/.DS_Store
+frontend/app/*.pem
+frontend/app/
+frontend/app/# debug
+frontend/app/npm-debug.log*
+frontend/app/yarn-debug.log*
+frontend/app/yarn-error.log*
+frontend/app/
+frontend/app/# local env files
+frontend/app/.env*.local
+frontend/app/.env
+frontend/app/
+frontend/app/# vercel
+frontend/app/.vercel
+frontend/app/
+frontend/app/# typescript
+frontend/app/*.tsbuildinfo
+frontend/app/next-env.d.ts
+frontend/app/
+frontend/app/
+frontend/app/# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+frontend/app/AGENTS.md
+frontend/app/# eslint.config.mjs
+frontend/app/
+frontend/app/# dependencies
+frontend/app//node_modules
+frontend/app//.pnp
+frontend/app/.pnp.*
+frontend/app/.yarn/*
+frontend/app/!.yarn/patches
+frontend/app/!.yarn/plugins
+frontend/app/!.yarn/releases
+frontend/app/!.yarn/versions
+frontend/app/
+frontend/app/# testing
+frontend/app//coverage
+frontend/app/
+frontend/app/# next.js
+frontend/app//.next/
+frontend/app//out/
+frontend/app/
+frontend/app/# production
+frontend/app//build
+frontend/app/
+frontend/app/# misc
+frontend/app/.DS_Store
+frontend/app/*.pem
+frontend/app/
+frontend/app/# debug
+frontend/app/npm-debug.log*
+frontend/app/yarn-debug.log*
+frontend/app/yarn-error.log*
+frontend/app/.pnpm-debug.log*
+frontend/app/
+frontend/app/# env files (can opt-in for committing if needed)
+frontend/app/.env*
+frontend/app/
+frontend/app/# vercel
+frontend/app/.vercel
+frontend/app/
+frontend/app/# typescript
+frontend/app/*.tsbuildinfo
+frontend/app/next-env.d.ts
+frontend/app/

@@ -1,19 +1,58 @@
 'use client' // Note que agora está correto: 'use client'
 
 import { useState, useEffect } from 'react';
+import MetricCard from './components/MetricCard';
+import LoadingBar from './components/loadingBar';
 
 export default function Dashboard(){
-  const [metrics, setMetrics] = useState('')
-  const [loading, setloading] = useState(true)
+  const [metrics, setMetrics] = useState<any>(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetch('http://127.0.0.1:8000/metrics')
     .then((res) => res.json())
     .then((data) => {
-      setMetrics(data), setloading(false)
+      setMetrics(data), setLoading(false)
     })
-    .catch((err) => console.error("erro ao solicitar dados a api", err))
-  },[])
+    .catch((err) => {
+      console.error("erro ao solicitar dados a api", err),
+      setLoading(false)
+    })
+  },[]);
+
+
+  if (loading){
+    <LoadingBar/>
+  }
+
+  return (
+    <main className="min-h-screen bg-mauve-900 border border-slate-800 p-6 rounded-2xl shadow-xl">
+      {/* Cabeçalho da dashboard*/}
+      <header className="mb-8">
+        <h1 className='text-3xl font-extrabold text-emerald-400'>Dashboard</h1>
+        <p className='text-slate-400 lowercase'>Your Business in Your Hands</p>
+      </header>
+
+      {/*Grid de Cards*/}
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+        <MetricCard
+          title='Lucro Diário'
+          data= {metrics?.data?.profit_days}
+          titleColor='text-emerald-400'
+        />
+
+        <MetricCard
+        title='Lucro Por Categoria'
+        data={metrics?.data?.profit_categories}
+        titleColor='text-emerald-400'
+        />  
+        
+      </div>
+      
+
+    </main>
+  )
+  
 
 }
 
